@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+export SESSION_NAME=$1||'pairing'
+SOCKET=/var/tmux/$SESSION_NAME
+
+echo "Attaching to session $SESSION_NAME"
+tmux -S $SOCKET attach || tmux -S $SOCKET
+echo "Good bye"
